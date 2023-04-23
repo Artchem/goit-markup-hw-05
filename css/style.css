@@ -10,6 +10,7 @@
   --cloud-bg: #f4f4fd;
   --modal-bg: #fcfcfc;
   --button-modal-bg: #e7e9fc;
+  --light-slate: #8e8f99;
   --trans-dur-time-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -636,4 +637,102 @@ img {
 .modal-close-btn:hover .icon-modal-close-btn,
 .modal-close-btn:focus .icon-modal-close-btn {
   fill: #ffffff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+.form-title {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
+.form-label {
+  margin-bottom: 4px;
+  /*font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;*/
+
+  color: var(--light-slate);
+}
+.input-thumb {
+  position: relative;
+}
+.form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+
+  transition: border-color var(--trans-dur-time-func);
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+.icon-input {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: currentColor;
+
+  transition: fill var(--trans-dur-time-func);
+}
+.form-input:focus + .icon-input {
+  fill: var(--accent-color);
+}
+.form-textarea {
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  /*font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;*/
+
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  resize: none;
+  transition: border-color var(--trans-dur-time-func);
+}
+.form-textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+.form-label-checkbox::before {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  content: "";
+  cursor: pointer;
+}
+.form-checkbox:checked + .form-label-checkbox::before {
+  background-color: var(--pressed-state);
+  background-image: url(../images/click.svg);
 }
